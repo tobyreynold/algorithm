@@ -130,44 +130,152 @@ export const constantRoutes = [
  */
 export const asyncRoutes = [
   {
-    path: '/permission',
+    path: '/Algorithm',
     component: Layout,
-    redirect: '/permission/page',
+    redirect: '/Algorithm/stack',
     alwaysShow: true, // will always show the root menu
-    name: 'Permission',
+    name: 'Algorithm',
     meta: {
-      title: 'Permission',
+      title: 'Algorithm',
       icon: 'lock',
       roles: ['admin', 'editor'] // you can set roles in root nav
     },
     children: [
       {
-        path: 'page',
-        component: () => import('@/views/permission/page'),
-        name: 'PagePermission',
+        path: 'stack',
+        component: () => import('@/views/algorithm/stack'),
+        name: 'Stack',
         meta: {
-          title: 'Page Permission',
+          title: 'Stack',
           roles: ['admin'] // or you can only set roles in sub nav
         }
       },
       {
-        path: 'directive',
+        path: 'queue',
         component: () => import('@/views/permission/directive'),
-        name: 'DirectivePermission',
+        name: 'Queue',
         meta: {
-          title: 'Directive Permission'
+          title: 'Queue'
           // if do not set roles, means: this page does not require permission
         }
       },
       {
-        path: 'role',
-        component: () => import('@/views/permission/role'),
-        name: 'RolePermission',
+        path: 'linkedlist',
+        component: () => import('@/views/permission/directive'),
+        name: 'Linkedlist',
         meta: {
-          title: 'Role Permission',
-          roles: ['admin']
+          title: 'Linkedlist'
+          // if do not set roles, means: this page does not require permission
+        }
+      },
+      {
+        path: 'set',
+        component: () => import('@/views/permission/directive'),
+        name: 'Set',
+        meta: {
+          title: 'Set'
+          // if do not set roles, means: this page does not require permission
+        }
+      },
+      {
+        path: 'dictionary',
+        component: () => import('@/views/permission/directive'),
+        name: 'Dictionary',
+        meta: {
+          title: 'Dictionary'
+          // if do not set roles, means: this page does not require permission
+        }
+      },
+      {
+        path: 'hashmap',
+        component: () => import('@/views/algorithm/hashmap'),
+        name: 'HashMap',
+        meta: {
+          title: 'HashMap',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+      {
+        path: 'binarySearchTree',
+        component: () => import('@/views/permission/page'),
+        name: 'BinarySearchTree',
+        meta: {
+          title: 'BinarySearchTree',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+      {
+        path: 'graph',
+        component: () => import('@/views/permission/page'),
+        name: 'Graph',
+        meta: {
+          title: 'Graph',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+      {
+        path: 'sort',
+        component: () => import('@/views/permission/page'),
+        name: 'Sort',
+        meta: {
+          title: 'Sort',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+      {
+        path: 'search',
+        component: () => import('@/views/permission/page'),
+        name: 'Search',
+        meta: {
+          title: 'Search',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+      {
+        path: 'dp',
+        component: () => import('@/views/permission/page'),
+        name: 'Dynamic Programming',
+        meta: {
+          title: 'Dynamic Programming',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+      {
+        path: 'partition',
+        component: () => import('@/views/permission/page'),
+        name: 'Partition Programming',
+        meta: {
+          title: 'Partition Programming',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+      {
+        path: 'fibonacci',
+        component: () => import('@/views/permission/directive'),
+        name: 'Fibonacci',
+        meta: {
+          title: 'Fibonacci',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+      {
+        path: 'greed',
+        component: () => import('@/views/permission/directive'),
+        name: 'Greed Algorithm',
+        meta: {
+          title: 'Greed Algorithm',
+          roles: ['admin'] // or you can only set roles in sub nav
         }
       }
+      // {
+      //   path: 'role',
+      //   component: () => import('@/views/permission/role'),
+      //   name: 'RolePermission',
+      //   meta: {
+      //     title: 'Role Permission',
+      //     roles: ['admin']
+      //   }
+      // }
     ]
   },
 
