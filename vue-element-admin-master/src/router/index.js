@@ -152,7 +152,7 @@ export const asyncRoutes = [
       },
       {
         path: 'queue',
-        component: () => import('@/views/permission/directive'),
+        component: () => import('@/views/algorithm/queue'),
         name: 'Queue',
         meta: {
           title: 'Queue'
@@ -161,7 +161,7 @@ export const asyncRoutes = [
       },
       {
         path: 'linkedlist',
-        component: () => import('@/views/permission/directive'),
+        component: () => import('@/views/algorithm/linkedlist'),
         name: 'Linkedlist',
         meta: {
           title: 'Linkedlist'
