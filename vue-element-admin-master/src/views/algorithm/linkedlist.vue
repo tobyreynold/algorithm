@@ -54,14 +54,30 @@ class LinkedList {
         }
         node.next = current
         previous.next = node
-
-        this.length++
-        return true
       }
+      this.length++
+      return true
     }
   }
 
   removeAt(position) {
+    if (position < 0 && position > this.length) return false
+    else {
+      let current = this.head
+      let previous = null
+      let index = 0
+      if (position === 0) {
+        this.head = current.next
+      } else {
+        while (index++ < position) {
+          previous = current
+          current = current.next
+        }
+        previous.next = current.next
+      }
+      this.length--
+      return true
+    }
   }
 
   findIndex(element) {
@@ -78,6 +94,8 @@ class LinkedList {
   }
 
   remove(element) {
+    const index = this.findIndex(element)
+    return this.removeAt(index)
   }
 
   get size() {
@@ -105,6 +123,9 @@ s.append(2)
 s.append(3)
 s.append(4)
 s.insert(0, 66)
+// s.removeAt(1)
+// s.removeAt(1)
+s.remove(2)
 console.log(s)
 console.log(s.isEmpty)
 console.log(s.size)
