@@ -38,7 +38,27 @@ class LinkedList {
   }
 
   insert(position, element) {
+    if (position < 0 && position > this.length) return false
+    else {
+      const node = new Node(element)
+      let current = this.head
+      let previous = null
+      let index = 0
+      if (position === 0) {
+        this.head = node
+        node.next = current
+      } else {
+        while (index++ < position) {
+          previous = current
+          current = current.next
+        }
+        node.next = current
+        previous.next = node
 
+        this.length++
+        return true
+      }
+    }
   }
 
   removeAt(position) {
@@ -84,7 +104,7 @@ s.append(1)
 s.append(2)
 s.append(3)
 s.append(4)
-
+s.insert(0, 66)
 console.log(s)
 console.log(s.isEmpty)
 console.log(s.size)
