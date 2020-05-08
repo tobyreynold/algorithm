@@ -260,7 +260,7 @@ export const asyncRoutes = [
       },
       {
         path: 'greed',
-        component: () => import('@/views/permission/directive'),
+        component: () => import('@/views/algorithm/greed'),
         name: 'Greed Algorithm',
         meta: {
           title: 'Greed Algorithm',
