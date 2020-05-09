@@ -179,7 +179,7 @@ export const asyncRoutes = [
       },
       {
         path: 'dictionary',
-        component: () => import('@/views/permission/directive'),
+        component: () => import('@/views/algorithm/dictionary'),
         name: 'Dictionary',
         meta: {
           title: 'Dictionary'

@@ -10,17 +10,17 @@
 //   name: 'stack',
 // }
 
-class Stack {
+class Queue {
   constructor() {
     this.items = []
   }
 
-  push(element) {
+  enqueue(element) {
     this.items.push(element)
   }
 
-  pop() {
-    return this.items.pop()
+  shift() {
+    return this.items.shift()
   }
 
   get size() {
@@ -40,20 +40,20 @@ class Stack {
   }
 }
 
-var s = new Stack()
-s.push(1)
-s.push(2)
-s.push(3)
-s.push(4)
+var s = new Queue()
+s.enqueue(1)
+s.enqueue(2)
+s.enqueue(3)
+s.enqueue(4)
 
 console.log(s)
 console.log(s.isEmpty)
 console.log(s.size)
 s.print()
-s.pop()
-s.pop()
-s.pop()
-s.pop()
+s.shift()
+s.shift()
+s.shift()
+s.shift()
 console.log(s.size)
 console.log(s.isEmpty)
 </script>
