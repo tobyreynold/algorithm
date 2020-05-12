@@ -197,7 +197,7 @@ export const asyncRoutes = [
       },
       {
         path: 'binarySearchTree',
-        component: () => import('@/views/permission/page'),
+        component: () => import('@/views/algorithm/binarysearchtree'),
         name: 'BinarySearchTree',
         meta: {
           title: 'BinarySearchTree',
