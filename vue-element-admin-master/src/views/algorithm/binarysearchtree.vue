@@ -93,6 +93,19 @@ class BinarySearchTree {
     }
     return maxNode(this.root)
   }
+
+  search(key) {
+    const searchNode = (node, key) => {
+      if (node === null) return
+      if (node.element === key) {
+        console.log(node)
+        return node
+      } else {
+        return searchNode((key < node.element) ? node.left : node.right, key)
+      }
+    }
+    searchNode(this.root, key)
+  }
 }
 
 const tree = new BinarySearchTree()
@@ -128,6 +141,9 @@ console.log(m.element)
 
 var max = tree.max()
 console.log(max)
+
+var r = tree.search(12)
+console.log(r)
 
 </script>
 
