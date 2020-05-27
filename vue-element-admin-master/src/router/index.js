@@ -206,7 +206,7 @@ export const asyncRoutes = [
       },
       {
         path: 'graph',
-        component: () => import('@/views/permission/page'),
+        component: () => import('@/views/algorithm/graph'),
         name: 'Graph',
         meta: {
           title: 'Graph',
@@ -215,19 +215,10 @@ export const asyncRoutes = [
       },
       {
         path: 'sort',
-        component: () => import('@/views/permission/page'),
+        component: () => import('@/views/algorithm/sort'),
         name: 'Sort',
         meta: {
           title: 'Sort',
-          roles: ['admin'] // or you can only set roles in sub nav
-        }
-      },
-      {
-        path: 'search',
-        component: () => import('@/views/permission/page'),
-        name: 'Search',
-        meta: {
-          title: 'Search',
           roles: ['admin'] // or you can only set roles in sub nav
         }
       },

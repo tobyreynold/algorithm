@@ -17,7 +17,7 @@ var toSum = function(nums, target) {
   var map = {}
 
   for (let i = 0; i < nums.length; i++) {
-    if (map[nums[i]] != undefined) {
+    if (map[nums[i]] !== undefined) {
       return [map[nums[i]] + 1, i + 1]
     } else {
       map[target - nums[i]] = i
