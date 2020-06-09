@@ -134,7 +134,7 @@ export default {
 .sortable-ghost{
   opacity: .8;
   color: #fff!important;
-  background: #42b983!important;
+  background: #0ED29E!important;
 }
 </style>
 

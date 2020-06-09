@@ -257,6 +257,15 @@ export const asyncRoutes = [
           title: 'Greed Algorithm',
           roles: ['admin'] // or you can only set roles in sub nav
         }
+      },
+      {
+        path: 'application',
+        component: () => import('@/views/algorithm/application'),
+        name: 'Application',
+        meta: {
+          title: 'Application',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
       }
       // {
       //   path: 'role',

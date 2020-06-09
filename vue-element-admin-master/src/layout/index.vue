@@ -61,6 +61,11 @@ export default {
   @import "~@/styles/mixin.scss";
   @import "~@/styles/variables.scss";
 
+  .header {
+    height:50px;
+    background: #efef21;
+  }
+
   .app-wrapper {
     @include clearfix;
     position: relative;

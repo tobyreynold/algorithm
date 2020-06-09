@@ -8,6 +8,8 @@ import Element from 'element-ui'
 import './styles/element-variables.scss'
 
 import '@/styles/index.scss' // global css
+import CookUI from '@heytap/cook-ui'
+import '@heytap/cook-ui/lib/theme-chalk/index.css'
 
 import App from './App'
 import store from './store'
@@ -35,6 +37,8 @@ if (process.env.NODE_ENV === 'production') {
 Vue.use(Element, {
   size: Cookies.get('size') || 'medium' // set element-ui default size
 })
+
+Vue.use(CookUI, { supportElementUI: true })
 
 // register global utility filters
 Object.keys(filters).forEach(key => {

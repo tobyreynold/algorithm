@@ -1,6 +1,14 @@
 <template>
   <div class="algorithm-container">
     <h2>模拟链表</h2>
+    <co-row>
+      <co-button icon="co-icon-search" circle />
+      <co-button type="primary" icon="co-icon-edit" circle />
+      <co-button type="success" icon="co-icon-check" circle />
+      <co-button type="info" icon="co-icon-message" circle />
+      <co-button type="warning" icon="co-icon-warning" circle />
+      <co-button type="danger" icon="co-icon-delete" circle />
+    </co-row>
   </div>
 </template>
 

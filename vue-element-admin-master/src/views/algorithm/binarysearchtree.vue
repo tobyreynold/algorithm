@@ -80,6 +80,24 @@ class BinarySearchTree {
     postOrderTraverseNode(this.root, callback)
   }
 
+  levelOrderTraverse(callback) {
+    const levelOrder = (node, callback) => {
+      const queue = []
+      const result = []
+      queue.push(node)
+      let pointer = 0
+      while (pointer < queue.length) {
+        const cnode = queue[pointer++]
+        result.push(cnode.element)
+        callback(cnode.element)
+        cnode.left && queue.push(cnode.left)
+        cnode.right && queue.push(cnode.right)
+      }
+      return result
+    }
+    return levelOrder(this.root, callback)
+  }
+
   min() {
     const minNode = node => {
       return node ? (node.left ? minNode(node.left) : node) : null
@@ -98,13 +116,40 @@ class BinarySearchTree {
     const searchNode = (node, key) => {
       if (node === null) return
       if (node.element === key) {
-        console.log(node)
         return node
       } else {
         return searchNode((key < node.element) ? node.left : node.right, key)
       }
     }
-    searchNode(this.root, key)
+    return searchNode(this.root, key)
+  }
+
+  maxDep() {
+    const maxDepth = root => {
+      if (root == null) return 0
+      return Math.max(maxDepth(root.left) + 1, maxDepth(root.right) + 1)
+    //   const queue = [root]
+    //   let level = 0
+    //   while (queue.length) {
+    //     let size = queue.length
+    //     while (size--) {
+    //       const front = queue.shift()
+    //       if (front.left) queue.push(front.left)
+    //       if (front.right) queue.push(front.right)
+    //     }
+    //     level++
+    //   }
+    //   return level
+    }
+    return maxDepth(this.root)
+  }
+
+  minDep() {
+    const minDepth = root => {
+      if (root == null) return 0
+      return Math.min(minDepth(root.left) + 1, minDepth(root.right) + 1)
+    }
+    return minDepth(this.root)
   }
 }
 
@@ -132,15 +177,22 @@ console.log(tree)
 //   console.log(value)
 // })
 
-// tree.postOrderTraverse((value) => {
-//   console.log(value)
-// })
+var result = tree.levelOrderTraverse((value) => {
+  console.log(value)
+})
+console.log(result)
 
-var m = tree.min()
-console.log(m.element)
+var depth = tree.maxDep()
+console.log('最大深度为：' + depth)
 
-var max = tree.max()
-console.log(max)
+var dep = tree.minDep()
+console.log('最小深度为：' + dep)
+
+// var m = tree.min()
+// console.log(m.element)
+
+// var max = tree.max()
+// console.log(max)
 
 var r = tree.search(12)
 console.log(r)

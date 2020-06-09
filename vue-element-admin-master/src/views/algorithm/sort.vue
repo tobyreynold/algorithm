@@ -173,7 +173,7 @@ Array.prototype.binarySearch = function(item) {
 // a.quickSort()
 console.log(a)
 
-a.selectSort()
+a.insertSort()
 console.log(a)
 // console.log(b)
 var index = a.binarySearch(556)
