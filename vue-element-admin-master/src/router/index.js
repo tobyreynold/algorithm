@@ -266,6 +266,15 @@ export const asyncRoutes = [
           title: 'Application',
           roles: ['admin'] // or you can only set roles in sub nav
         }
+      },
+      {
+        path: 'ES',
+        component: () => import('@/views/algorithm/es'),
+        name: 'ES',
+        meta: {
+          title: 'ES',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
       }
       // {
       //   path: 'role',

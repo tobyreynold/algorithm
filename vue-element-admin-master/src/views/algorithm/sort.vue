@@ -1,6 +1,6 @@
 <template>
   <div class="algorithm-container">
-    <h2>实现各种sort</h2>
+    <h2>ALL kinds of sort</h2>
   </div>
 </template>
 
@@ -178,6 +178,45 @@ console.log(a)
 // console.log(b)
 var index = a.binarySearch(556)
 console.log(index)
+
+// eslint-disable-next-line no-extend-native
+Array.prototype.heap_sort = function(top) {
+  var arr = this.slice(0)
+  var len = arr.length
+  var k
+  top ? k = len - top - 1 : k = 0
+
+  function swap(i, j) {
+    var temp = arr[i]
+    arr[i] = arr[j]
+    arr[j] = temp
+  }
+  function max_heapify(start, end) {
+    var dad = start
+    var son = dad * 2 + 1
+    if (son >= end) return
+    if (son + 1 < end && arr[son] < arr[son + 1]) {
+      son++
+    }
+    if (arr[dad] <= arr[son]) {
+      swap(dad, son)
+      max_heapify(son, end)
+    }
+  }
+
+  for (var i = Math.floor(len / 2) - 1; i >= 0; i--) max_heapify(i, len)
+  for (var j = len - 1; j > k; j--) {
+    swap(0, j)
+    max_heapify(0, j)
+  }
+  return arr
+}
+
+var aaa = [12, 55, 22, 13, 14, 3, 5, 3, 0, 8, 6, 1, 5, 2, 1, 5, 2, 1, 5, 2, 9]
+var top = 5
+var heap = aaa.heap_sort(top)
+console.log(heap)
+console.log(heap[heap.length - top])
 
 </script>
 

@@ -45,6 +45,8 @@ class MinCoinChange {
         total += coin
       }
     })
+    console.log(total)
+    console.log(change)
     return change.toString()
   }
 }
